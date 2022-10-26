@@ -102,43 +102,15 @@ div {
   border: 2px solid gray;
   z-index: 100;
 }
-div:before {
-  border-radius: inherit;
-  background: linear-gradient(90deg, #ffffff, #ecdaff, #71bbff);
-  content: '';    
-  display: block;
-  height: 100%;
-  position: absolute;
-  top: 0; 
-  left: 0;
-  opacity: 0;
-  width: 100%;
-  z-index: -100;
-  transition: opacity 1.0s;
-}
-div:hover:before {
-  transition: opacity 1.0s;
-	opacity: 1;
-}
-div:before {
-  border-radius: inherit;
-  background: linear-gradient(90deg, #ffffff, #ecdaff, #71bbff);
-  content: '';    
-  display: block;
-  height: 100%;
-  position: absolute;
-  top: 0; 
-  left: 0;
-  opacity: 0;
-  width: 100%;
-  z-index: -100;
-  transition: opacity .5s;
-}
-div:hover:before {
-	opacity: 1;
-}
 .electric-kettle {
 	stroke: black;
-	stroke-width: 50px;
-	width: 300px;
+	stroke-width: 75px;
+	width: 500px;
+	padding: 50px;
+	background: wheat;
+	border: 2px solid black;
+	box-shadow: 10px 5px 5px gray;
+}
+.center {
+	text-align: center;
 }
