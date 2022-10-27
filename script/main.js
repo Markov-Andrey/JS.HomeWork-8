@@ -2,7 +2,7 @@
 //Фичи для реализации:
 
 СВОЙСТВА:
-Цвет чайника из списка (готово)
+ГОТОВО! Цвет чайника из списка (ЛЕГКОМАСШТАБИРУЕМО!)
 Марка чайника (Модель чайника)
 Объем чайника
 Мощность чайника
@@ -22,101 +22,46 @@
 
 ОПЦИОНАЛЬНО:
 Отслеживание температуры вливаемой воды, подсчет средней температуры
-*/
 
-/*
 ЗАДАЧА:
 Создать структуру объекта через логику ООП. 
 Постоянное масштабирование объекта без переписывания кода.
 Стуктура подобного объекта?
 */
 
-/* ПОПЫТКА СОЗДАНИЯ ОБЪЕКТА ЧЕРЕЗ ООП (стандарт ES6)
-class Kettel {
-	//общий набор переменных внутри объекта
-	#selectElem
-	#objKettel
-	//метод конструктор
-	constructor(){
-		this.#selectElem = document.querySelector('#select')
-		this.#objKettel = document.querySelector('#electric-kettle');
-	};
-	//свойство объекта "Цвет чайника"
-	#colorKettel = color => {
-		this.#objKettel.style.fill = color;
-	};
-	//Набор заданных параметров цвета
-	#colorChange = () => {this.#selectElem.addEventListener('change', function() {
-		let index = selectElem.selectedIndex;
-		switch (index){
-		  case 0:
-			  colorKettel('Black');
-			  break;
-		  case 1:
-			  colorKettel('Crimson');
-			  break;
-		  case 2:
-			  colorKettel('Tomato');
-			  break;
-		  case 3:
-			  colorKettel('Gold');
-			  break;
-		  case 4:
-			  colorKettel('ForestGreen');
-			  break;
-		  case 5:
-			  colorKettel('DeepSkyBlue');
-			  break;
-		  case 6:
-			  colorKettel('RoyalBlue');
-			  break;
-		  case 7:
-			  colorKettel('Indigo');
-			  break;
-		  default:
-			  colorKettel('Black');
-			  break;
-		};
-	  });
-	};
-};
-*/
-
-// РАБОЧИЙ КОД СОЗДАННЫЙ ЧЕРЕЗ ФУНКЦИОНАЛЬНОЕ ПРОГРАММИРОВАНИЕ
-
-//Функция "цвет чайника"
+//Функция смены цвета чайника
 let colorKettel = color => {
 	kettel = document.querySelector('#electric-kettle');
 	kettel.style.fill = color;
 };
-//Набор значений цвета чайника из списка <option>
-let selectElem = document.querySelector('#select')
-selectElem.addEventListener('change', function() {
-  let index = selectElem.selectedIndex;
-  switch (index){
-	case 0:
-		colorKettel('Black');
-		break;
-	case 1:
-		colorKettel('Crimson');
-		break;
-	case 2:
-		colorKettel('Tomato');
-		break;
-	case 3:
-		colorKettel('Gold');
-		break;
-	case 4:
-		colorKettel('ForestGreen');
-		break;
-	case 5:
-		colorKettel('DeepSkyBlue');
-		break;
-	case 6:
-		colorKettel('RoyalBlue');
-		break;
-	case 7:
-		colorKettel('Indigo');
-		break;
-  };
-})
+//База цветов чайника
+let colorCode = []; //код цвета
+let colorName = []; //наименование цвета
+//Функция заполнения массива значениями - код цвета, наменование цвета
+let colorCodeName = (code,name) => {
+	colorCode.push(code)
+	colorName.push(name)
+}
+//Заполение массива кодом и наименованием цвета
+colorCodeName ('Black','Ночной чёрный');
+colorCodeName ('Crimson','Насыщенный красный');
+colorCodeName ('Tomato','Оранжевый томатный');
+colorCodeName ('Gold','Золотой');
+colorCodeName ('ForestGreen','Зеленый лесной');
+colorCodeName ('DeepSkyBlue','Небесный голубой');
+colorCodeName ('RoyalBlue','Королевский синий');
+colorCodeName ('Indigo','Индиго');
+colorCodeName ('Pink','Нежно-розовый');
+//Автозаполнение списка с цветами чайника
+let selectColor = [];
+for (let i = 0; i < colorName.length;i++){
+	selectColor[i] = document.createElement('option');
+	selectColor[i].innerHTML = colorName[i];
+	document.querySelector('#selectColor').appendChild(selectColor[i])
+}
+//Подбор значений цвета чайника из списка <option>
+let selectElem = document.querySelector('#selectColor')
+selectElem.addEventListener('change', () => {
+	let index = selectElem.selectedIndex;
+	colorKettel(colorCode[index]);
+});
