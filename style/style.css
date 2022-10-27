@@ -98,9 +98,9 @@ div {
 	transition-duration: .3s;
 	margin: 0 10%;
 	padding: 5px;
-  background: linear-gradient(90deg, #ffffff 33%, #ecdaff, #71bbff);
-  border: 2px solid gray;
-  z-index: 100;
+	background: linear-gradient(90deg, #ffffff 33%, #ecdaff, #71bbff);
+	border: 2px solid gray;
+	z-index: 100;
 }
 .electric-kettle {
 	stroke: black;
@@ -113,4 +113,25 @@ div {
 }
 .center {
 	text-align: center;
+}
+.logoSmeg, .logoBraun{
+	display: block;
+	text-align: center;
+	position: relative;
+    margin-left: auto;
+    margin-right: auto;
+}
+.logoSmeg {
+	width: 300px;
+	top: 50px;
+	fill:rgb(255, 255, 255);
+	stroke: rgb(119, 119, 119);
+	stroke-width: 30px;
+}
+.logoBraun {
+	width: 110px;
+	top: 50px;
+	fill:rgb(0, 0, 0);
+	stroke: rgb(255, 255, 255);
+	stroke-width: 110px;
 }
