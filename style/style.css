@@ -106,7 +106,7 @@ div {
 	stroke: black;
 	stroke-width: 75px;
 	width: 500px;
-	padding: 50px;
+	padding: 100px 50px 50px 50px;
 	background: wheat;
 	border: 2px solid black;
 	box-shadow: 10px 5px 5px gray;
@@ -114,7 +114,9 @@ div {
 .center {
 	text-align: center;
 }
-.logoSmeg, .logoBraun{
+.logoSmeg, 
+.logoBraun, 
+.logoXiaomi{
 	display: block;
 	text-align: center;
 	position: relative;
@@ -122,16 +124,36 @@ div {
     margin-right: auto;
 }
 .logoSmeg {
-	width: 300px;
-	top: 50px;
+	width: 500px;
+	top: 90px;
 	fill:rgb(255, 255, 255);
 	stroke: rgb(119, 119, 119);
 	stroke-width: 30px;
 }
 .logoBraun {
-	width: 110px;
-	top: 50px;
-	fill:rgb(0, 0, 0);
-	stroke: rgb(255, 255, 255);
-	stroke-width: 110px;
+	width: 200px;
+	top: 100px;
+	fill:rgb(255, 255, 255);
+	stroke: rgb(119, 119, 119);
+	stroke-width: 200px;
+}
+.logoXiaomi {
+	width: 80px;
+	top: 100px;
+	fill:rgb(255, 166, 0);
+	stroke: rgb(0, 0, 0);
+	stroke-width: 100px;
+}
+.grid {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	position: relative;
+	transition-duration: 0;
+	margin: auto;
+	padding: 5px;
+	width: 590px;
+	background: white;
+	border: 2px solid rgb(0, 0, 0);
+	z-index: 100;
+	box-shadow: 10px 5px 5px gray;
 }
