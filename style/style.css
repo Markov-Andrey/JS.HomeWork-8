@@ -157,3 +157,11 @@ div {
 	z-index: 100;
 	box-shadow: 10px 5px 5px gray;
 }
+select{
+	font-weight: 700;
+	border-radius: 10px;
+	background: rgb(166, 208, 255);
+}
+option{
+	font-weight: 200;
+}
